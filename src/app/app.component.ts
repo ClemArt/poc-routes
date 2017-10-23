@@ -1,15 +1,16 @@
-import {Component, ComponentFactoryResolver, Type, ViewChild} from '@angular/core';
+import {Component, ComponentFactoryResolver, OnInit, Type, ViewChild} from '@angular/core';
 import {OneComponent} from './uno/one/one.component';
 import {TwoComponent} from './dos/two/two.component';
 import {TreeComponent} from './tres/tree/tree.component';
 import {OtherOneComponent} from './uno/other-one/other-one.component';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   title = 'app';
 
@@ -22,9 +23,14 @@ export class AppComponent {
   headerComponents: Array<Type<any>> = [OneComponent, OtherOneComponent];
   headerCount = 0;
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) {
+  constructor(private componentFactoryResolver: ComponentFactoryResolver, public activatedRoute: ActivatedRoute) {
   }
 
+  ngOnInit(): void {
+    this.activatedRoute.url.subscribe((route) => {
+      console.log(route);
+    });
+  }
 
   chargeOne() {
     this.headerCount++;

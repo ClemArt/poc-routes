@@ -6,21 +6,20 @@ import {UnoModule} from './uno/uno.module';
 import {DosModule} from './dos/dos.module';
 import {TresModule} from './tres/tres.module';
 import {RouterModule, Routes} from '@angular/router';
-import {OneComponent} from './uno/one/one.component';
-import {TwoComponent} from './dos/two/two.component';
-import {TreeComponent} from './tres/tree/tree.component';
 import {DynamicDirective} from './directive/dynamic.directive';
+import {BigComponent} from './big.component';
 
 
 const appRoutes: Routes = [
   {
-    path: '', component: AppComponent
+    path: '**', component: BigComponent
   }
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
+    BigComponent,
     DynamicDirective
   ],
   imports: [
