@@ -7,6 +7,7 @@ import {MainComponent} from "./main/main.component";
   imports: [
     CommonModule
   ],
+  entryComponents: [TreeComponent],
   declarations: [TreeComponent, MainComponent],
   exports: [TreeComponent, MainComponent]
 })

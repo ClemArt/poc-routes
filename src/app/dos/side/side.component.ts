@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from "@angular/core";
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-side',
@@ -7,7 +7,8 @@ import {Component, EventEmitter, OnInit, Output} from "@angular/core";
 })
 export class SideComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

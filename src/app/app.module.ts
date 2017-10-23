@@ -9,21 +9,19 @@ import {RouterModule, Routes} from '@angular/router';
 import {OneComponent} from './uno/one/one.component';
 import {TwoComponent} from './dos/two/two.component';
 import {TreeComponent} from './tres/tree/tree.component';
+import {DynamicDirective} from './directive/dynamic.directive';
 
 
 const appRoutes: Routes = [
   {
     path: '', component: AppComponent
-  },
-  {path: 'path-2', component: TreeComponent, outlet: 'side'},
-
-  {path: 'path-2', component: TwoComponent, outlet: 'header'},
-  {path: 'path-1', component: OneComponent, outlet: 'main'},
+  }
 ];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DynamicDirective
   ],
   imports: [
     UnoModule,

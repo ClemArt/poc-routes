@@ -8,33 +8,11 @@
 </div>
 <h2>Here are some links to help you start: </h2>
 <ul>
-  <li><a (click)="reset()" routerLink="/">Root</a></li>
-  <li><a (click)="reset()" [routerLink]="[{ outlets: { main: [], side: ['path-2'], header: ['path-2'] } }]">tree</a></li>
-  <li><a (click)="reset()" [routerLink]="[{ outlets: { main: ['path-1'], header: [],  side: [] } }]">one</a></li>
+  <li><a (click)="chargeOne()">one</a></li>
+  <li><a (click)="chargeTwo()">two</a></li>
+  <li><a (click)="chargeTree()">tree</a></li>
 </ul>
 
-<!--<ng-container>-->
-<!--<app-one></app-one>-->
-<!--</ng-container>-->
-<!--<ng-template [ngIf]="true">-->
-<!--<app-two></app-two>-->
-<!--</ng-template>-->
-<!--<ng-template [ngIf]="true">-->
-<!--<app-tree></app-tree>-->
-<!--</ng-template>-->
-
-<!--<ng-container>-->
-<!--<app-one></app-one>-->
-<!--<ng-template [ngIf]="true">-->
-<!--<app-two></app-two>-->
-<!--<ng-template [ngIf]="true">-->
-<!--<app-tree></app-tree>-->
-<!--</ng-template>-->
-<!--</ng-template>-->
-<!--</ng-container>-->
-
-<app-header *ngIf="header"><router-outlet name='header' (deactivate)="headerDeactivate()"></router-outlet></app-header>
-<app-main *ngIf="main"><router-outlet name='main' (deactivate)="mainDeactivate()"></router-outlet></app-main>
-<app-side *ngIf="side"><router-outlet name='side' (deactivate)="sideDeactivate()"></router-outlet></app-side>
-
-
+<app-header #header=dynamicdirective dynamic></app-header>
+<app-side #side=dynamicdirective dynamic></app-side>
+<app-main #main=dynamicdirective dynamic></app-main>
