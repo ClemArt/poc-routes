@@ -10,63 +10,8 @@ import {ActivatedRoute} from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
-  title = 'app';
-
-  @ViewChild('main') elementMain;
-
-  @ViewChild('header') elementHeader;
-
-  @ViewChild('side') elementSide;
-
-  headerComponents: Array<Type<any>> = [OneComponent, OtherOneComponent];
-  headerCount = 0;
-
-  constructor(private componentFactoryResolver: ComponentFactoryResolver, public activatedRoute: ActivatedRoute) {
-  }
-
-  ngOnInit(): void {
-    this.activatedRoute.url.subscribe((route) => {
-      console.log(route);
-    });
-  }
-
-  chargeOne() {
-    this.headerCount++;
-    if (this.headerCount >= this.headerComponents.length) {
-      this.headerCount = 0;
-    }
-    const comp = this.headerComponents[this.headerCount];
-
-    const OneComponentFactory = this.componentFactoryResolver.resolveComponentFactory(this.headerComponents[this.headerCount]);
-
-    const viewContainerRef = this.elementHeader.viewContainerRef;
-    viewContainerRef.clear();
-
-    viewContainerRef.createComponent(OneComponentFactory);
-
-  }
-
-  chargeTwo() {
-    const twoComponentFactory = this.componentFactoryResolver.resolveComponentFactory(TwoComponent);
-
-    const viewContainerRef = this.elementSide.viewContainerRef;
-    viewContainerRef.clear();
-
-    viewContainerRef.createComponent(twoComponentFactory);
-
-  }
-
-  chargeTree() {
-    const treeComponentFactory = this.componentFactoryResolver.resolveComponentFactory(TreeComponent);
-
-    const viewContainerRef = this.elementMain.viewContainerRef;
-    viewContainerRef.clear();
-
-    viewContainerRef.createComponent(treeComponentFactory);
-
-  }
-
+  title = 'SIX App';
 
 }
