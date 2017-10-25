@@ -1,8 +1,6 @@
 import {Component, ComponentFactoryResolver, OnInit, Type, ViewChild, AfterContentInit} from '@angular/core';
-import {OneComponent} from './uno/one/one.component';
 import {TwoComponent} from './dos/two/two.component';
 import {TreeComponent} from './tres/tree/tree.component';
-import {OtherOneComponent} from './uno/other-one/other-one.component';
 import {ActivatedRoute} from '@angular/router';
 import { RoutingService } from './routing.service';
 import { forEach } from 'lodash';
@@ -58,9 +56,7 @@ export class BigComponent implements AfterContentInit {
   //   });
   }
 
-  charge(component, viewContainerRef) {
-
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(component);
+  charge(componentFactory, viewContainerRef) {
 
     this.clear(viewContainerRef);
 

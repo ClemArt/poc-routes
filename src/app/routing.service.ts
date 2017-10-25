@@ -1,4 +1,4 @@
-import { Injectable, Component } from '@angular/core';
+import { Injectable, Component, ComponentFactory } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { Routes } from '@angular/router';
 
@@ -19,8 +19,8 @@ export class RoutingService {
 
 class RoutingTree {
   constructor(
-    public header: Component,
-    public main: Component,
-    public side: Component
+    public header: ComponentFactory<any>,
+    public main: ComponentFactory<any>,
+    public side: ComponentFactory<any>
   ) {}
 }
